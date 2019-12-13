@@ -1,0 +1,45 @@
+
+<!doctype html>
+<html lang="fr">
+
+    <head>
+        <meta charset="utf8">
+        <link type="text/css" rel="stylesheet" href="to do list (2).css">
+    </head>
+
+    <body>
+
+        <div>
+            <h1 id="To"> To do list</h1>
+        </div>
+            <div class="from2">
+         <input class="from" type="button" name="bouton" value='Ranger la chambre' onclick="metreFait(this)"><br>
+         <input class="from" type="button" name="bouton" value='vider les poubelles' onclick="metreFait(this)"><br>
+         <input class="from" type="button" name="bouton" value='Faire la vaiselle' onclick="metreFait(this)"><br>
+         <input class="from" type="button" name="bouton" value='Manger des chips' onclick="metreFait(this)"><br>
+
+        </div>
+        
+    </body>
+
+    <script type="text/javascript">
+        function metreFait(objtt) {
+             objtt.value = objtt.value + " (Fait)";
+             objtt.onclick = function () {
+                enleverFait(this);
+            }
+        }
+
+        function enleverFait(objtt) {
+             objtt.value = objtt.value.substr(0, objtt.value.length-7);
+             objtt.onclick = function () {
+                metreFait(this);
+            }
+        }
+
+
+
+
+    </script>
+
+</html>
